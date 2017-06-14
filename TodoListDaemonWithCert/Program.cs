@@ -29,6 +29,8 @@ using System.Net.Http.Headers;
 using System.Web.Script.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Configuration;
+using Newtonsoft.Json;
+
 namespace TodoListDaemonWithCert
 {
     class Program
@@ -234,8 +236,7 @@ namespace TodoListDaemonWithCert
             {
                 // Read the response and output it to the console.
                 string s = await response.Content.ReadAsStringAsync();
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                List<TodoItem> toDoArray = serializer.Deserialize<List<TodoItem>>(s);
+                List<TodoItem> toDoArray = JsonConvert.DeserializeObject<List<TodoItem>>(s);
 
                 int count = 0;
                 foreach (TodoItem item in toDoArray)
