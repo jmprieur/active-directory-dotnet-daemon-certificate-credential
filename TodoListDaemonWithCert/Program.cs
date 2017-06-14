@@ -26,7 +26,6 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Net.Http;
 using System.Threading;
 using System.Net.Http.Headers;
-using System.Web.Script.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Configuration;
 using Newtonsoft.Json;
