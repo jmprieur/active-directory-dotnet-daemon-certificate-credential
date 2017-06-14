@@ -72,7 +72,7 @@ namespace TodoListDaemonWithCert
 
             // Initialize the Certificate Credential to be used by ADAL.
             X509Certificate2 cert = null;
-            X509Store store = new X509Store(StoreLocation.CurrentUser);
+            X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser);
             try
             {
                 store.Open(OpenFlags.ReadOnly);
